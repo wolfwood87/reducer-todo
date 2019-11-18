@@ -9,7 +9,11 @@ const TodoForm = () => {
     }
     return (
         <div>
-            <form>
+            <form onSubmit = {(e) => {
+                        e.preventDefault();
+                        dispatch({ type: 'ADD_TODO', payload: newTodo});
+                        setNewTodo('');
+                    }}>
                 <input
                     onChange={handleChange}
                     type='text'
