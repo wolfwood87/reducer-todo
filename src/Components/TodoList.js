@@ -4,13 +4,14 @@ import { TodoContext } from '../Contexts/TodoContext';
 import TodoForm from './TodoForm'
 
 const TodoList = () => {
-    const { state } = useContext(TodoContext)
+    const { state, dispatch } = useContext(TodoContext)
     return(
         <div>
-            {state.map(item => (
+            {state.map((item, index) => (
                 <Todo
-                    key={item.id}
+                    key={index}
                     todo={item}
+                    dispatch = {dispatch}
                 />
             ))}
             <TodoForm />

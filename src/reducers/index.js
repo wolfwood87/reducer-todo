@@ -12,6 +12,16 @@ export const todoReducer = (state, action) => {
         completed: false,
         id: new Date()
       }]
+    case "TOGGLE_COMPLETED":
+      return(state.map(name => {
+        if(name.item === action.payload) {
+          return {
+            ...name,
+            completed: !name.completed
+          }
+        }
+        return name;
+      }))
       default:
           return state;
   }
