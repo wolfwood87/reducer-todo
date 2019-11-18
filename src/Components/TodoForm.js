@@ -26,7 +26,9 @@ const TodoForm = () => {
                 >
                     Add Todo
                 </button>
-                <button>Clear Completed</button>
+                <button onClick = {() => {
+                    dispatch({ type: 'CLEAR_COMPLETED' })
+                }}>Clear Completed</button>
             </div>
         </div>
     )

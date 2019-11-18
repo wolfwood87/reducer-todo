@@ -22,7 +22,13 @@ export const todoReducer = (state, action) => {
         }
         return name;
       }))
-      default:
-          return state;
+    case "CLEAR_COMPLETED":
+      return(
+        state.filter(todoItem => {
+          return !todoItem.completed;
+        })
+      )
+    default:
+        return state;
   }
 };
