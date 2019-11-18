@@ -1,18 +1,15 @@
 import React, { useReducer } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { TodoContext } from './Contexts/TodoContext.js';
 import { initialTodo, todoReducer } from './reducers';
-
+import TodoList from './Components/TodoList'
 function App() {
   const [state, dispatch] = useReducer(todoReducer, initialTodo)
   return (
     <div className="App">
-      <TodoContext.Provider value={{}}>
+      <TodoContext.Provider value={{state, dispatch}}>
         {/* <TodoForm /> */}
-        <p>Item: {state.item}</p>
-        <p>ID: {state.id}</p>
-        <p>Completed: {JSON.stringify(state.completed)}</p>
+        <TodoList />
       </TodoContext.Provider>
     </div>
   );
