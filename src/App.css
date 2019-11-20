@@ -29,3 +29,11 @@
   text-decoration: line-through;
   color: red;
 }
+.todo-item {
+  display: flex;
+  justify-content: center;
+  margin: 1%;
+}
+.complete-date {
+  margin-left: 1%;
+}
